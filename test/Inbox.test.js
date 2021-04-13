@@ -21,8 +21,8 @@ beforeEach(async () => {
 
     //use one of those accounts to create contract
     inbox = await new web3.eth.Contract(JSON.parse(interface))
-        .deploy({ data: bytecode, arguments: [INITIAL_STRING] })
-        .send({from: accounts[0], gas: '1000000'});
+        .deploy({ data: bytecode, arguments: [INITIAL_STRING] }) //wrzutka do sieci
+        .send({from: accounts[0], gas: '1000000'}); //info o samym kontrakcie
 
     inbox.setProvider(provider);
 });
@@ -46,3 +46,4 @@ describe('Inbox',() => {
     });
 
 });
+
